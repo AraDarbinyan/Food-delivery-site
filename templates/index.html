@@ -3,8 +3,12 @@
 {% block title %}Home{% endblock %}
 
 
+{% block welcome %}
+<header class="Welcome"><h1>Welcome to our website!</h1></header>
+{% endblock %}
+
 {% block content %}
-    <header class="Welcome"><h1>Welcome to our website!</h1></header>
+    <!-- <header class="Welcome"><h1>Welcome to our website!</h1></header> -->
     <div>
         <img class="BackImage" src="{{url_for('static', filename='images/FoodBackground.webp')}}" alt="FoodBackground">
     </div>

@@ -11,6 +11,8 @@
     display: flex;         /* включаем Flexbox */
     justify-content: space-around; /* распределяем ссылки по ширине */
     align-items: center;   /* вертикальное выравнивание (если нужно) */
+    background-color: #FF0000;
+    height: 40px;
   }
   
   .menu li {
@@ -26,11 +28,28 @@
     /* Добавьте любой другой дизайн по вкусу */
   }
   
-  .menu a:hover {
-    background-color: #f4f4f4; /* пример эффекта наведения */
+ 
+  .media ul{
+    list-style: none;      
+    margin: 0;             
+    padding: 0;
+    display: flex;        
+    justify-content: space-around; 
+    align-items: center;
   }
 
-  .menu img {
+  .media li {
+    margin: 0 10px;
+  }
+
+
+  .media a {
+    text-decoration: none; 
+    color: #333;           
+    padding: 5px 10px;
+  }
+
+  .media img {
     width: 50px;
     height: 50px;
   }
