@@ -1,4 +1,43 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h1 class="Welcome">Assortment</h1>
+
+<div class="category-container">
+
+    <div class="category">
+        <img src="{{ url_for('static', filename='images/FoodCategories/burgers.jpg') }}" alt="burgers">
+        <p>Burgers</p>
+    </div>
+
+    <div class="category">
+        <img src="{{ url_for('static', filename='images/FoodCategories/pizza.jpg') }}" alt="pizza">
+        <p>Pizza</p>
+    </div>
+
+    <div class="category">
+        <img src="{{ url_for('static', filename='images/FoodCategories/salads.jpg') }}" alt="salads">
+        <p>Salads</p>
+    </div>
+
+    <div class="category">
+        <img src="{{ url_for('static', filename='images/FoodCategories/sushi.webp') }}" alt="sushi">
+        <p>Sushi</p>
+    </div>
+
+    <div class="category">
+        <img src="{{ url_for('static', filename='images/FoodCategories/sandwich.jpg') }}" alt="sandwich">
+        <p>Sandwich</p>
+    </div>
+
+    <div class="category">
+        <img src="{{ url_for('static', filename='images/FoodCategories/drinks.jpg') }}" alt="drinks">
+        <p>Drinks</p>
+    </div>
+
+    <div class="category">
+        <img src="{{ url_for('static', filename='images/FoodCategories/beer.jpg') }}" alt="beer">
+        <p>Beer</p>
+    </div>
+</div>
 {% endblock %}

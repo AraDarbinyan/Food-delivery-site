@@ -12,6 +12,11 @@ def about():
     return render_template('about.html')
 
 
+@app.route('/menu/')
+def menu():
+    return render_template('menu.html')
+
+
 @app.route('/profile/')
 def profile():
     return render_template('profile.html')

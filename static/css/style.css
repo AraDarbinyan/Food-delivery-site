@@ -23,7 +23,7 @@
   
   .menu a {
     text-decoration: none; /* убираем подчёркивание ссылок */
-    color: #333;           /* цвет текста */
+    color: #FFFFFF;           /* цвет текста */
     padding: 5px 10px;     /* отступы внутри ссылки */
     /* Добавьте любой другой дизайн по вкусу */
   }
@@ -58,3 +58,38 @@
     width: 300px; 
     margin: auto; 
  }
+
+ .category-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.category {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.category:hover {
+    transform: scale(1.05);
+}
+
+.category img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.category p {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
