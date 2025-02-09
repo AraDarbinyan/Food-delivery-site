@@ -27,6 +27,36 @@
     padding: 5px 10px;     /* отступы внутри ссылки */
     /* Добавьте любой другой дизайн по вкусу */
   }
+
+  p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+h3 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #5bc0de;
+    border-bottom: 2px solid #5bc0de;
+    padding-bottom: 5px;
+}
+
+.aboutinfo {
+    /* text-align: center; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+
+.eatfood{
+    margin: 10px;
+    padding: auto;
+    width: 450px;
+    height: 300px;
+}
   
  
   .media ul{

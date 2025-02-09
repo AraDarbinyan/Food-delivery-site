@@ -3,14 +3,17 @@
 {% block title %}About{% endblock %}
 
 {% block content %}
+<div class="aboutinfo">
 <h3>About Us</h3>
 <p>Welcome to [Your Food Delivery Service Name], where we bring delicious meals 
 straight to your doorstep with speed and convenience. Our mission is to make high-quality 
 food accessible to everyone, whether you’re craving a quick snack, a hearty meal, or a gourmet experience.</p>
-<p><u>Who we are</u>
+<p><b>Who we are</b>
     We are a passionate team of food lovers and tech enthusiasts dedicated to revolutionizing food delivery. 
     Our platform connects you with the best restaurants, cafes, and eateries in your city,
      offering a diverse selection of cuisines to satisfy every taste.</p>
+<img class="eatfood" src="{{url_for('static', filename='images/PeopleEatingFood.jpg')}}" alt="">
+<img class="eatfood" src="{{url_for('static', filename='images/PeopleEatingFood2.jpg')}}" alt="">
 <h3>Our Values</h3>
 <p>
     <ul>
@@ -30,6 +33,10 @@ food accessible to everyone, whether you’re craving a quick snack, a hearty me
         <li>Exclusive Offers – Enjoy discounts, promotions, and loyalty rewards.</li>
     </ul>
 </div>
+<h3>Our contacts</h3>
+<p>We work 24 hours every day</p>
+<p>Our phone: 1234-5678-9012</p>
+<p>Our email: somemail@gmail.com</p>
 <h3>Our social media</h3>
 <nav class="media">
     <ul>
@@ -41,4 +48,5 @@ food accessible to everyone, whether you’re craving a quick snack, a hearty me
         <li><a href="https://www.linkedin.com/"><img src="{{url_for('static', filename='Images/SocialMedia/Linkedin.png')}}" alt="Linkedin"></a></li>
     </ul>
 </nav>
+</div>
 {% endblock %}
