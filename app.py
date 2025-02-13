@@ -17,6 +17,11 @@ def menu():
     return render_template('menu.html')
 
 
+@app.route('/category/<str:category_name>/')
+def category():
+    pass
+
+
 @app.route('/profile/')
 def profile():
     return render_template('profile.html')
