@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from models import Product
 
 app = Flask(__name__)
 
@@ -17,9 +18,10 @@ def menu():
     return render_template('menu.html')
 
 
-@app.route('/category/<str:category_name>/')
-def category():
-    pass
+@app.route('/category/<string:category_name>/')
+def category(category_name):
+    products = Product.query.filter_by(category=category_name).all()
+    return render_template('category.html', products=products)
 
 
 @app.route('/profile/')

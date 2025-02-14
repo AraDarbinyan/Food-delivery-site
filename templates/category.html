@@ -1,3 +1,16 @@
 {% extends 'base.html' %}
 
 {% block title %}Category{% endblock %}
+
+{% block content %}
+<div>
+    {% for product in products %}
+    <div>
+        <img src="{{ url_for('static', filename='images/Food/Beer/' + product.image_filename) }}" alt="{{ product.name }}">
+        <b><p>product.name</p></b>
+        <p>product.description</p>
+        <p>product.price</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
