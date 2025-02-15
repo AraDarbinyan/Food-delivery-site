@@ -5,6 +5,9 @@ db = SQLAlchemy()
 
 
 class Customer(db.Model):
+
+    __tablename__ = 'Customer'
+
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
     email = db.Column(db.String(80), nullable=False)
@@ -18,6 +21,9 @@ class Customer(db.Model):
 
 
 class Product(db.Model):
+
+    __tablename__ = 'Product'
+
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
     category = db.Column(db.String(80), nullable=False)
@@ -31,6 +37,9 @@ class Product(db.Model):
     
 
 class Cart(db.Model):
+
+    __tablename__ = 'Cart'
+
     id = db.Column(db.Integer, primary_key=True)
     customer_id =  db.Column(db.Integer, db.ForeignKey('Customer.id'), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
@@ -43,14 +52,17 @@ class Cart(db.Model):
 
 cart_product = db.Table(
     'cart_product',
-    db.Column('cart_id', db.Integer, db.ForeignKey('cart.id'), primary_key=True),
-    db.Column('product_id', db.Integer, db.ForeignKey('product.id'), primary_key=True),
+    db.Column('cart_id', db.Integer, db.ForeignKey('Cart.id'), primary_key=True),
+    db.Column('product_id', db.Integer, db.ForeignKey('Product.id'), primary_key=True),
     db.Column('quantity', db.Integer, nullable=False, default=1) 
 )
 
 
 
 class Order(db.Model):
+
+    __tablename__ = 'Order'
+
     id = db.Column(db.Integer, primary_key=True)
     customer_id =  db.Column(db.Integer, db.ForeignKey('Customer.id'), nullable=False)
     total_price = db.Column(db.Numeric(8,2), nullable=False)
