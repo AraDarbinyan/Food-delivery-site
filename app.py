@@ -1,7 +1,11 @@
 from flask import Flask, render_template
-from models import Product
+from models import Product, db
 
 app = Flask(__name__)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///fooddeliver.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db.init_app(app)
 
 @app.route("/")
 def index():
@@ -18,7 +22,7 @@ def menu():
     return render_template('menu.html')
 
 
-@app.route('/category/<string:category_name>/')
+@app.route('/menu/category/<string:category_name>/')
 def category(category_name):
     products = Product.query.filter_by(category=category_name).all()
     return render_template('category.html', products=products)
