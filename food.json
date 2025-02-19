@@ -4,447 +4,447 @@
         "category": "beer",
         "description": "Beer Alexandrapol 0.5 L",
         "price": 630,
-        "image_path": "images/Food/Beer/Alexandrapol.png"
+        "image_path": "Beer/Alexandrapol.png"
     },
     {
         "name": "Gyumri",
         "category": "beer",
         "description": "Beer Gyumri 0.5 L",
         "price": 530,
-        "image_path": "images/Food/Beer/Gyumri.png"
+        "image_path": "Beer/Gyumri.png"
     },
     {
         "name": "Kilikia",
         "category": "beer",
         "description": "Beer Kilikia 0.5 L",
         "price": 510,
-        "image_path": "images/Food/Beer/Kilikia.webp"
+        "image_path": "Beer/Kilikia.webp"
     },
     {
         "name": "Kotayk",
         "category": "beer",
         "description": "Beer Kotayk 0.5 L",
         "price": 510,
-        "image_path": "images/Food/Beer/Kotayk.jpg"
+        "image_path": "Beer/Kotayk.jpg"
     },
     {
         "name": "Heineken",
         "category": "beer",
         "description": "Beer Heineken 0.5 L",
         "price": 850,
-        "image_path": "images/Food/Beer/Heineken.jpg"
+        "image_path": "Beer/Heineken.jpg"
     },
     {
         "name": "Estrella",
         "category": "beer",
         "description": "Beer Estrella 0.5 L",
         "price": 750,
-        "image_path": "images/Food/Beer/Estrella.jpg"
+        "image_path": "Beer/Estrella.jpg"
     },
     {
         "name": "STELLA ARTOIS",
         "category": "beer",
         "description": "Beer STELLA ARTOIS 0.5 L",
         "price": 650,
-        "image_path": "images/Food/Beer/Stella-Artois.webp"
+        "image_path": "Beer/Stella-Artois.webp"
     },
     {
         "name": "Water",
         "category": "drinks",
         "description": "Water 0.5 L",
         "price": 160,
-        "image_path": "images/Food/Drinks/Water.webp"
+        "image_path": "Drinks/Water.webp"
     },
     {
         "name": "Jermuk",
         "category": "drinks",
         "description": "Mineral water 0.5 L",
         "price": 190,
-        "image_path": "images/Food/Drinks/Jermuk.png"
+        "image_path": "Drinks/Jermuk.png"
     },
     {
         "name": "Coke",
         "category": "drinks",
         "description": "Coca cola 0.5 L",
         "price": 360,
-        "image_path": "images/Food/Drinks/Coke.jpeg"
+        "image_path": "Drinks/Coke.jpeg"
     },
     {
         "name": "Coke Zero",
         "category": "drinks",
         "description": "Coca cola zero 0.5 L",
         "price": 360,
-        "image_path": "images/Food/Drinks/coca-cola-zero.webp"
+        "image_path": "Drinks/coca-cola-zero.webp"
     },
     {
         "name": "Pepsi",
         "category": "drinks",
         "description": "Pepsi 0.5 L",
         "price": 350,
-        "image_path": "images/Food/Drinks/Pepsi.png"
+        "image_path": "Drinks/Pepsi.png"
     },
     {
         "name": "Fanta",
         "category": "drinks",
         "description": "Fanta 0.5 L",
         "price": 360,
-        "image_path": "images/Food/Drinks/Fanta.webp"
+        "image_path": "Drinks/Fanta.webp"
     },
     {
         "name": "Sprite",
         "category": "drinks",
         "description": "Sprite 0.5 L",
         "price": 350,
-        "image_path": "images/Food/Drinks/Sprite.jpg"
+        "image_path": "Drinks/Sprite.jpg"
     },
     {
         "name": "Boom",
         "category": "drinks",
         "description": "Energetic boom 0.5 L",
         "price": 320,
-        "image_path": "images/Food/Drinks/Boom.jpg"
+        "image_path": "Drinks/Boom.jpg"
     },
     {
         "name": "BBQ chicken pizza",
         "category": "pizza",
         "description": "A smoky, sweet pizza with grilled chicken, BBQ sauce, and cheese.",
         "price": 4500,
-        "image_path": "images/Food/Pizza/bbq-chicken-pizza.jpg"
+        "image_path": "Pizza/bbq-chicken-pizza.jpg"
     },
     {
         "name": "Cheese pizza",
         "category": "pizza",
         "description": "A crispy-crust pizza with rich tomato sauce and melted mozzarella.",
         "price": 3200,
-        "image_path": "images/Food/Pizza/cheese-pizza.jpg"
+        "image_path": "Pizza/cheese-pizza.jpg"
     },
     {
         "name": "Hawaiian pizza",
         "category": "pizza",
         "description": "Ham, pineapple, and mozzarella on a tomato sauce base.",
         "price": 4200,
-        "image_path": "images/Food/Pizza/hawaiian.jpg"
+        "image_path": "Pizza/hawaiian.jpg"
     },
     {
         "name": "Margherita",
         "category": "pizza",
         "description": "Fresh tomato sauce, mozzarella, and basil for a simple yet flavorful pizza.",
         "price": 3500,
-        "image_path": "images/Food/Pizza/margherita.jpg"
+        "image_path": "Pizza/margherita.jpg"
     },
     {
         "name": "Pepperoni",
         "category": "pizza",
         "description": "A spicy and savory pizza with pepperoni slices over melted cheese.",
         "price": 4500,
-        "image_path": "images/Food/Pizza/pepperoni.jpg"
+        "image_path": "Pizza/pepperoni.jpg"
     },
     {
         "name": "Supreme pizza",
         "category": "pizza",
         "description": "A loaded pizza with pepperoni, sausage, bell peppers, onions, mushrooms, and olives.",
         "price": 5000,
-        "image_path": "images/Food/Pizza/supreme-pizza.jpg"
+        "image_path": "Pizza/supreme-pizza.jpg"
     },
     {
         "name": "veggie pizza",
         "category": "pizza",
         "description": "Mushrooms, bell peppers, olives, onions, and tomatoes for a fresh taste.",
         "price": 4200,
-        "image_path": "images/Food/Pizza/veggie-pizza.png"
+        "image_path": "Pizza/veggie-pizza.png"
     },
     {
         "name": "Hamburger",
         "category": "burger",
         "description": "A simple beef patty with lettuce, tomato, and sauce in a bun.",
         "price": 1800,
-        "image_path": "images/Food/Burgers/Hamburger.png"
+        "image_path": "Burgers/Hamburger.png"
     },
     {
         "name": "Whopper",
         "category": "burger",
         "description": "A large flame-grilled beef burger with fresh vegetables, mayo, ketchup, and pickles.",
         "price": 3000,
-        "image_path": "images/Food/Burgers/whopper.png"
+        "image_path": "Burgers/whopper.png"
     },
     {
         "name": "Double whopper",
         "category": "burger",
         "description": "Two flame-grilled beef patties with lettuce, tomato, pickles, onions, and mayo",
         "price": 3800,
-        "image_path": "images/Food/Burgers/double-whopper.webp"
+        "image_path": "Burgers/double-whopper.webp"
     },
     {
         "name": "Becon burger",
         "category": "burger",
         "description": "A juicy beef patty with crispy bacon, cheese, lettuce, and sauce in a toasted bun",
         "price": 2800,
-        "image_path": "images/Food/Burgers/becon-burger.jpg"
+        "image_path": "Burgers/becon-burger.jpg"
     },
     {
         "name": "Cheeseburger",
         "category": "burger",
         "description": " A classic beef burger with melted cheese, lettuce, tomato, and pickles. ",
         "price": 2200,
-        "image_path": "images/Food/Burgers/Cheeseburger.jpg"
+        "image_path": "Burgers/Cheeseburger.jpg"
     },
     {
         "name": "Double cheeseburger",
         "category": "burger",
         "description": "Two beef patties, double cheese, lettuce, tomato, and sauce.",
         "price": 3500,
-        "image_path": "images/Food/Burgers/double-cheeseburger.png"
+        "image_path": "Burgers/double-cheeseburger.png"
     },
     {
         "name": "Beef BBQ",
         "category": "bbq",
         "description": "Beef barbecue, onion, greens, lavash",
         "price": 1800,
-        "image_path": "images/Food/BBQ/beef-bbq.jpg"
+        "image_path": "BBQ/beef-bbq.jpg"
     },
     {
         "name": "Chiken BBQ",
         "category": "bbq",
         "description": "chicken barbecue, onion, greens, lavash",
         "price": 1700,
-        "image_path": "images/Food/BBQ/chiken-bbq.jpg"
+        "image_path": "BBQ/chiken-bbq.jpg"
     },
     {
         "name": "Pork BBQ",
         "category": "bbq",
         "description": "Pork barbecue, onion, greens, lavash",
         "price": 1800,
-        "image_path": "images/Food/BBQ/pork-bbq.jpg"
+        "image_path": "BBQ/pork-bbq.jpg"
     },
     {
         "name": "Mutton BBQ",
         "category": "bbq",
         "description": "Mutton barbecue, onion, greens, lavash",
         "price": 1900,
-        "image_path": "images/Food/BBQ/mutton-bbq.jpg"
+        "image_path": "BBQ/mutton-bbq.jpg"
     },
     {
         "name": "Beef kebab",
         "category": "bbq",
         "description": "Onion, greens, tomato, hot pepper, ketchup, mayonnaise, lavash",
         "price": 1200,
-        "image_path": "images/Food/BBQ/beef-kebab.jpg"
+        "image_path": "BBQ/beef-kebab.jpg"
     },
     {
         "name": "Chiken kebab",
         "category": "bbq",
         "description": "Onion, greens, tomato, hot pepper, ketchup, mayonnaise, lavash",
         "price": 1100,
-        "image_path": "images/Food/BBQ/chiken-kebab.jpg"
+        "image_path": "BBQ/chiken-kebab.jpg"
     },
     {
         "name": "Pork kebab",
         "category": "bbq",
         "description": "Onion, greens, tomato, hot pepper, ketchup, mayonnaise, lavash",
         "price": 1200,
-        "image_path": "images/Food/BBQ/pork-kebab.jpg"
+        "image_path": "BBQ/pork-kebab.jpg"
     },
     {
         "name": "Caeser salad",
         "category": "salads",
         "description": "Chicken, tomato, cheese, croutons, lettuce leaves, spices, sauce.",
         "price": 1000,
-        "image_path": "images/Food/Salads/caeser-salad.jpg"
+        "image_path": "Salads/caeser-salad.jpg"
     },
     {
         "name": "Greek salad",
         "category": "salads",
         "description": "Tomato, cucumber, feta cheese, olives, lettuce leaves, spices, olive oil.",
         "price": 900,
-        "image_path": "images/Food/Salads/greek-salad.jpg"
+        "image_path": "Salads/greek-salad.jpg"
     },
     {
         "name": "Ordo salads",
         "category": "salads",
         "description": "Orzo, Cherry tomatoes, cucumbers, onion, olives, Feta cheese, Chickpeas, basil ",
         "price": 900,
-        "image_path": "images/Food/Salads/ordo-salad,jpg"
+        "image_path": "Salads/ordo-salad,jpg"
     },
     {
         "name": "Tabbouleh salad",
         "category": "salads",
         "description": "Tomato, green onion, bulgur, herbs, tomato paste, spices.",
         "price": 800,
-        "image_path": "images/Food/Salads/tabbouleh-salad.jpg"
+        "image_path": "Salads/tabbouleh-salad.jpg"
     },
     {
         "name": "Club sandwich",
         "category": "sandwich",
         "description": "A layered sandwich featuring turkey, bacon, lettuce, tomato, and mayo on toasted bread",
         "price": 1400,
-        "image_path": "images/Food/Sandwich/Club-sandwich.jpg"
+        "image_path": "Sandwich/Club-sandwich.jpg"
     },
     {
         "name": "Chicken sandwich",
         "category": "sandwich",
         "description": "A sandwich with grilled or fried chicken, often accompanied by lettuce, tomato, and mayo",
         "price": 1600,
-        "image_path": "images/Food/Sandwich/chiken-sandwich.jpg"
+        "image_path": "Sandwich/chiken-sandwich.jpg"
     },
     {
         "name": "Grilled cheese sandwich",
         "category": "sandwich",
         "description": "A simple, crispy, and gooey sandwich with melted cheese between buttered, toasted bread.",
         "price": 2200,
-        "image_path": "images/Food/Sandwich/Grilled-cheese-sandwich.jpg"
+        "image_path": "Sandwich/Grilled-cheese-sandwich.jpg"
     },
     {
         "name": "Veggie sandwich",
         "category": "sandwich",
         "description": " A fresh sandwich loaded with vegetables like lettuce, tomato, cucumber, avocado, and cheese.",
         "price": 2000,
-        "image_path": "images/Food/Sandwich/Veggie-sandwich.jpg"
+        "image_path": "Sandwich/Veggie-sandwich.jpg"
     },
     {
         "name": "BLT sandwich",
         "category": "sandwich",
         "description": "A classic sandwich with bacon, lettuce, and tomato on toasted bread.",
         "price": 1800,
-        "image_path": "images/Food/Sandwich/BLT-sandwich.jpg"
+        "image_path": "Sandwich/BLT-sandwich.jpg"
     },
     {
         "name": "Reuben sandwich",
         "category": "sandwich",
         "description": "A savory sandwich with corned beef, Swiss cheese, sauerkraut, and Russian dressing on rye bread. ",
         "price": 1800,
-        "image_path": "images/Food/Sandwich/reuben-sandwich.jpg"
+        "image_path": "Sandwich/reuben-sandwich.jpg"
     },
     {
         "name": "Ham sandwich",
         "category": "sandwich",
         "description": "A straightforward sandwich with ham and often cheese on bread or a roll.",
         "price": 1900,
-        "image_path": "images/Food/Sandwich/ham-sandwich.jpg"
+        "image_path": "Sandwich/ham-sandwich.jpg"
     },
     {
         "name": "Nuggets.webp",
         "category": "sides&extras",
         "description": "6 nuggets",
         "price": 900,
-        "image_path": "images/Food/Sides&Extras/Nuggets.webp"
+        "image_path": "Sides&Extras/Nuggets.webp"
     },
     {
         "name": "Onion rings",
         "category": "sides&extras",
         "description": "",
         "price": 800,
-        "image_path": "images/Food/Sides&Extras/Onion-rings.webp"
+        "image_path": "Sides&Extras/Onion-rings.webp"
     },
     {
         "name": "Strips",
         "category": "sides&extras",
         "description": "6 strips",
         "price": 1200,
-        "image_path": "images/Food/Sides&Extras/Strips.webp"
+        "image_path": "Sides&Extras/Strips.webp"
     },
     {
         "name": "Chicken wings",
         "category": "sides&extras",
         "description": "6 wings",
         "price": 1200,
-        "image_path": "images/Food/Sides&Extras/Chicken-wings.webp"
+        "image_path": "Sides&Extras/Chicken-wings.webp"
     },
     {
         "name": "French fries",
         "category": "sides&extras",
         "description": "",
         "price": 600,
-        "image_path": "images/Food/Sides&Extras/french-fries.jpg"
+        "image_path": "Sides&Extras/french-fries.jpg"
     },
     {
         "name": "Ketchup",
         "category": "sides&extras",
         "description": "",
         "price": 50,
-        "image_path": "images/Food/Sides&Extras/ketchup.webp"
+        "image_path": "Sides&Extras/ketchup.webp"
     },
     {
         "name": "BBQ sourse",
         "category": "sides&extras",
         "description": "",
         "price": 300,
-        "image_path": "images/Food/Sides&Extras/bbq-souse.jpg"
+        "image_path": "Sides&Extras/bbq-souse.jpg"
     },
     {
         "name": "Cheese couse",
         "category": "sides&extras",
         "description": "",
         "price": 200,
-        "image_path": "images/Food/Sides&Extras/cheese-couse.webp"
+        "image_path": "Sides&Extras/cheese-couse.webp"
     },
     {
         "name": "Pork shawarma",
         "category": "shawarma",
         "description": "Pork meat, grated french fries,, onion, hot pepper, marinated cucumber, greens, tomato, ketchup",
         "price": 1300,
-        "image_path": "images/Food/Shawarma/pork-shawarma.webp"
+        "image_path": "Shawarma/pork-shawarma.webp"
     },
     {
         "name": "Beef shawarma",
         "category": "shawarma",
         "description": "Beef meat, grated french fries,, onion, hot pepper, marinated cucumber, greens, tomato, ketchup",
         "price": 1300,
-        "image_path": "images/Food/Shawarma/beef-shawarma.jpg"
+        "image_path": "Shawarma/beef-shawarma.jpg"
     },
     {
         "name": "Chicken shawarma",
         "category": "shawarma",
         "description": "Chicken meat, grated french fries, onion, hot pepper, marinated cucumber, greens, tomato, ketchup",
         "price": 1200,
-        "image_path": "images/Food/Shawarma/Chicken-Shawarma.jpg"
+        "image_path": "Shawarma/Chicken-Shawarma.jpg"
     },
     {
         "name": "Pork shawarma in bread",
         "category": "shawarma",
         "description": "Pork meat, grated french fries,, onion, hot pepper, marinated cucumber, greens, tomato, ketchup",
         "price": 1000,
-        "image_path": "images/Food/Shawarma/bread-pork.jpg"
+        "image_path": "Shawarma/bread-pork.jpg"
     },
     {
         "name": "Beef shawarma in bread",
         "category": "shawarma",
         "description": "Beef meat, grated french fries,, onion, hot pepper, marinated cucumber, greens, tomato, ketchup",
         "price": 1000,
-        "image_path": "images/Food/Shawarma/bread-beef.jpg"
+        "image_path": "Shawarma/bread-beef.jpg"
     },
     {
         "name": "Chicken shawarma in bread",
         "category": "shawarma",
         "description": "Chicken meat, grated french fries,, onion, hot pepper, marinated cucumber, greens, tomato, ketchup",
         "price": 900,
-        "image_path": "images/Food/Shawarma/bread-chicken.webp"
+        "image_path": "Shawarma/bread-chicken.webp"
     },
     {
         "name": "Alyaska",
         "category": "sushi",
         "description": "8 items. Rice, nori, cream cheese, sesame, cucumber, salmon",
         "price": 3000,
-        "image_path": "images/Food/Sushi/alyaska.webp"
+        "image_path": "Sushi/alyaska.webp"
     },
     {
         "name": "Filadelfia",
         "category": "sushi",
         "description": "8 items. Rice, nori, salmon, cream cheese, cucumber",
         "price": 3700,
-        "image_path": "images/Food/Sushi/filadelfia.webp"
+        "image_path": "Sushi/filadelfia.webp"
     },
     {
         "name": "Fokioni",
         "category": "sushi",
         "description": "8 items. Rice, nori, cream cheese, salmon, cucumber, sesame, unagi sauce",
         "price": 2900,
-        "image_path": "images/Food/Sushi/fokioni.webp"
+        "image_path": "Sushi/fokioni.webp"
     },
     {
         "name": "California",
         "category": "sushi",
         "description": "8 items. Rice, nori, crab sticks, cream cheese, tobiko, cucumber",
         "price": 3500,
-        "image_path": "images/Food/Sushi/kalifornia.webp"
+        "image_path": "Sushi/kalifornia.webp"
     }
 ]

@@ -7,11 +7,10 @@
     {% for product in products %}
     <div class="product_rows">
         <div class="product-cart">
-            <img src="{{url_for('static', filename=product.image_filename)}}" alt="">
             <b><h4>{{product.name}}</h4></b>
+            <img class="productimage" src="{{url_for('static', filename='images/Food/' + product.image_path)}}" alt="{{ product.name }}">
             <p>{{product.description}}</p>
             <p class="price">{{product.price}} AMD</p>
-            <p>{{product.image_path}}</p>
         </div>
     </div>
     {% endfor %}
