@@ -238,11 +238,11 @@
         "image_path": "BBQ/chiken-kebab.jpg"
     },
     {
-        "name": "Pork kebab",
+        "name": "Mutton kebab",
         "category": "bbq",
         "description": "Onion, greens, tomato, hot pepper, ketchup, mayonnaise, lavash",
         "price": 1200,
-        "image_path": "BBQ/pork-kebab.jpg"
+        "image_path": "BBQ/mutton-kebab.jpg"
     },
     {
         "name": "Caeser salad",

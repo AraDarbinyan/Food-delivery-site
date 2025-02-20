@@ -3,11 +3,11 @@
 {% block title %}Category{% endblock %}
 
 {% block content %}
-<div class="product_rows">
+<div class="category-container">
     {% for product in products %}
-    <div class="product_rows">
+    <div class="category">
         <div class="product-cart">
-            <b><h4>{{product.name}}</h4></b>
+            <b><h2>{{product.name}}</h2></b>
             <img class="productimage" src="{{url_for('static', filename='images/Food/' + product.image_path)}}" alt="{{ product.name }}">
             <p>{{product.description}}</p>
             <p class="price">{{product.price}} AMD</p>
