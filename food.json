@@ -53,7 +53,7 @@
         "category": "drinks",
         "description": "Water 0.5 L",
         "price": 160,
-        "image_path": "Drinks/Water.webp"
+        "image_path": "Drinks/Water.jpg"
     },
     {
         "name": "Jermuk",
@@ -263,7 +263,7 @@
         "category": "salads",
         "description": "Orzo, Cherry tomatoes, cucumbers, onion, olives, Feta cheese, Chickpeas, basil ",
         "price": 900,
-        "image_path": "Salads/ordo-salad,jpg"
+        "image_path": "Salads/ordo-salad.jpg"
     },
     {
         "name": "Tabbouleh salad",
@@ -284,7 +284,7 @@
         "category": "sandwich",
         "description": "A sandwich with grilled or fried chicken, often accompanied by lettuce, tomato, and mayo",
         "price": 1600,
-        "image_path": "Sandwich/chiken-sandwich.jpg"
+        "image_path": "Sandwich/Chicken-sandwich.jpg"
     },
     {
         "name": "Grilled cheese sandwich",

@@ -10,6 +10,9 @@ html, body {
 .Welcome {
     text-align: center;
 }
+.main-content {
+  flex: 1; /* Pushes the footer down */
+}
 .menu ul {
     list-style: none;       /* убираем маркеры списков */
     margin: 0;             
@@ -140,15 +143,13 @@ h3 {
 
 /* Footer styling */
 footer {
-  background-color: #000; /* Keep the black background */
-  color: white;
-  text-align: center;
-  padding: 10px 0; /* Reduce padding to make it smaller */
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50px; /* Set a fixed height */
-  display: flex;
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
+  background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
