@@ -1,3 +1,9 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
 .BackImage {
     width: 100%;
 }
@@ -127,4 +133,22 @@ h3 {
 .productimage {
   width: 300px;
   height: 300px;
+}
+.main-content {
+  flex: 1;
+}
+
+/* Footer styling */
+footer {
+  background-color: #000; /* Keep the black background */
+  color: white;
+  text-align: center;
+  padding: 10px 0; /* Reduce padding to make it smaller */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px; /* Set a fixed height */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
 }
