@@ -50,12 +50,15 @@ class Cart(db.Model):
         return f"<Cart {self.id} for Customer {self.customer_id}>"
 
 
-cart_product = db.Table(
-    'cart_product',
-    db.Column('cart_id', db.Integer, db.ForeignKey('Cart.id'), primary_key=True),
-    db.Column('product_id', db.Integer, db.ForeignKey('Product.id'), primary_key=True),
-    db.Column('quantity', db.Integer, nullable=False, default=1) 
-)
+class CartProduct(db.Model):
+    cart_id = db.Column(db.Integer, db.ForeignKey('cart.id'), primary_key=True)
+    product_id = db.Column(db.Integer, db.ForeignKey('product.id'), primary_key=True)
+    quantity = db.Column(db.Integer, nullable=False, default=1)
+
+    __table_args__ = (
+        db.PrimaryKeyConstraint('cart_id', 'product_id'),
+    )
+
 
 
 
