@@ -12,7 +12,6 @@ class Customer(db.Model):
     name = db.Column(db.String(80), nullable=False)
     email = db.Column(db.String(80), nullable=False)
     phone = db.Column(db.String(80), nullable=False)
-    address = db.Column(db.String(80), nullable=False)
     password = db.Column(db.String(80), nullable=False)
 
 
@@ -51,8 +50,8 @@ class Cart(db.Model):
 
 
 class CartProduct(db.Model):
-    cart_id = db.Column(db.Integer, db.ForeignKey('cart.id'), primary_key=True)
-    product_id = db.Column(db.Integer, db.ForeignKey('product.id'), primary_key=True)
+    cart_id = db.Column(db.Integer, db.ForeignKey('Cart.id'), primary_key=True)
+    product_id = db.Column(db.Integer, db.ForeignKey('Product.id'), primary_key=True)
     quantity = db.Column(db.Integer, nullable=False, default=1)
 
     __table_args__ = (
@@ -69,6 +68,7 @@ class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     customer_id =  db.Column(db.Integer, db.ForeignKey('Customer.id'), nullable=False)
     total_price = db.Column(db.Numeric(8,2), nullable=False)
+    delivery_address = db.Column(db.Text, nullable=False)
     status = db.Column(db.Enum('pending', 'paid', 'shipped', 'delivered', 'canceled', name="order_status"), default="pending")
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
