@@ -83,9 +83,13 @@ def logout():
     return redirect(url_for('login'))
 
 
-@app.route('/profile/')
+@app.route('/profile/', methods=['GET', 'POST'])
+@login_required
 def profile():
-    return render_template('profile.html')
+    if current_user.is_authenticated:
+        return render_template('profile.html', name=current_user.name, id=current_user.id)
+    else:
+        return redirect(url_for('login'))
 
 
 if __name__ == '__main__':
