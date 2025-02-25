@@ -1,3 +1,16 @@
 {% extends 'base.html' %}
 
 {% block title %}Cart{% endblock %}
+
+{% block content %}
+<div class="cart">
+    <ul id="cart-items">
+        {% for item in cart_products %}
+            <li>{{item}}</li>
+        {% endfor %}
+    </ul>
+    <button>Order</button>
+</div>
+<a href="{{ url_for('menu') }}">Continue Shopping</a>
+</div>
+{% endblock %}

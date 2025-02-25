@@ -11,22 +11,20 @@ html, body {
     text-align: center;
 }
 .main-content {
-  flex: 1; /* Pushes the footer down */
+  flex: 1; 
 }
 .menu ul {
-    list-style: none;       /* убираем маркеры списков */
+    list-style: none;   
     margin: 0;             
     padding: 0;
-    display: flex;         /* включаем Flexbox */
-    justify-content: space-around; /* распределяем ссылки по ширине */
-    align-items: center;   /* вертикальное выравнивание (если нужно) */
+    display: flex;       
+    justify-content: space-around; 
+    align-items: center;   
     background-color: #FF0000;
     height: 40px;
   }
   
   .menu li {
-    /* при использовании Flexbox конкретные стили для li обычно не нужны,
-       но можно добавить отступы или другие настройки */
     margin: 0 10px;
   }
   
@@ -34,7 +32,6 @@ html, body {
     text-decoration: none; /* убираем подчёркивание ссылок */
     color: #FFFFFF;           /* цвет текста */
     padding: 5px 10px;     /* отступы внутри ссылки */
-    /* Добавьте любой другой дизайн по вкусу */
   }
 
   p {
@@ -131,6 +128,9 @@ h3 {
     font-size: 18px;
     font-weight: bold;
     color: #333;
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
 }
 
 .productimage {
@@ -152,4 +152,56 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.back {
+  background-color: #007BFF; /* Blue background */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.back:active {
+  background-color: #004085; /* Even darker on click */
+  transform: scale(0.97);
+}
+
+.back:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5); /* Focus ring for accessibility */
+}
+
+
+.add-to-cart{
+  background-color: #FF0000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  align-self: stretch;
+}
+button.add-to-cart:hover {
+  background-color: #d43f3f; /* Darker shade on hover */
+}
+
+button.add-to-cart:active {
+  background-color: #b33636; /* Even darker on click */
+  transform: scale(0.97);
 }

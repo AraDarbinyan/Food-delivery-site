@@ -4,6 +4,7 @@
 
 {% block content %}
 <h1>Welcome to your account</h1>
-{{name}}
+ID: {{id}} <br></br>
+Name: {{name}} <br></br>
 <a href="{{ url_for('logout') }}">Logout</a>
 {% endblock %}
