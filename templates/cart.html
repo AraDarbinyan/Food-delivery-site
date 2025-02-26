@@ -6,7 +6,8 @@
 <div class="cart">
     <ul id="cart-items">
         {% for item in cart_products %}
-            <li>{{item}}</li>
+            {% set product = get_product(item.product_id) %}
+            <li>name = {{product.name}}, quantity-{{item.quantity}}, price = {{product.price * item.quantity}}</li>
         {% endfor %}
     </ul>
     <button>Order</button>

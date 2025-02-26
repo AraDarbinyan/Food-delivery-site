@@ -34,6 +34,11 @@ def category(category_name):
     return render_template('category.html', products=products)
 
 
+def get_product(product_id):
+    product = Product.query.get_or_404(product_id)
+    return product
+
+
 @app.route('/cart/')
 @login_required
 def cart():
@@ -43,29 +48,33 @@ def cart():
         return redirect(url_for('menu'))
     
     cart_products = CartProduct.query.filter_by(cart_id=cart.id).all()
-    return render_template('cart.html',  cart_products=cart_products)
+    # get_product = Product.query.filter_by(id = cart_products.product_id).all()
+    return render_template('cart.html',  cart_products=cart_products, get_product=get_product)
 
 
 @app.route('/add_to_cart/<int:product_id>', methods=['POST'])
 def add_to_cart(product_id):
-    product = Product.query.get_or_404(product_id)
-    cart = Cart.query.filter_by(customer_id=current_user.id).first()
-    if not cart:
-        cart = Cart(customer_id=current_user.id)
-        db.session.add(cart)
-        db.session.commit()
-    
-    cart_product = CartProduct.query.filter_by(cart_id=cart.id, product_id=product.id).first()
-    if not cart_product:
-        new_cart_product = CartProduct(cart_id=cart.id, product_id=product.id)
-        db.session.add(new_cart_product)
-    else:
-        cart_product.quantity += 1
+    try:
+        product = Product.query.get_or_404(product_id)
+        cart = Cart.query.filter_by(customer_id=current_user.id).first()
+        if not cart:
+            cart = Cart(customer_id=current_user.id)
+            db.session.add(cart)
+            db.session.commit()
         
-    db.session.commit()
+        cart_product = CartProduct.query.filter_by(cart_id=cart.id, product_id=product.id).first()
+        if not cart_product:
+            new_cart_product = CartProduct(cart_id=cart.id, product_id=product.id)
+            db.session.add(new_cart_product)
+        else:
+            cart_product.quantity += 1
+            
+        db.session.commit()
 
-    flash(f'{product.name} added to cart successfully!')
-    return redirect(url_for('menu'))
+        flash(f'{product.name} added to cart successfully!')
+        return redirect(url_for('menu'))
+    except AttributeError:
+        return redirect(url_for('login'))
 
 
 @login_meneger.user_loader
