@@ -5,10 +5,17 @@
 {% block content %}
 <div class="cart">
     <ul id="cart-items">
+        {% set total_price = namespace(value=0) %}  {# Initialize total price #}
         {% for item in cart_products %}
             {% set product = get_product(item.product_id) %}
-            <li>name = {{product.name}}, quantity-{{item.quantity}}, price = {{product.price * item.quantity}}</li>
+            <li>
+                <span>{{ product.name }}</span>
+                <span>Qty: {{ item.quantity }}</span>
+                <span>Price: {{ product.price * item.quantity }}</span>
+            </li>
+            {% set total_price.value = total_price.value + (product.price * item.quantity) %}
         {% endfor %}
+        <p class="total-price"><strong>Total price: {{ total_price.value }}</strong></p>
     </ul>
     <button>Order</button>
 </div>
