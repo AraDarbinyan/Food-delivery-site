@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import Product, Customer, Cart, CartProduct, db
@@ -75,6 +75,41 @@ def add_to_cart(product_id):
         return redirect(url_for('menu'))
     except AttributeError:
         return redirect(url_for('login'))
+    
+
+@app.route('/update_cart/<int:product_id>/<action>', methods=['POST'])
+@login_required
+def update_cart(product_id, action):
+    cart = Cart.query.filter_by(customer_id=current_user.id).first()
+    if not cart:
+        return jsonify({"error": "Cart not found"}), 400
+
+    cart_product = CartProduct.query.filter_by(cart_id=cart.id, product_id=product_id).first()
+    
+    if not cart_product:
+        return jsonify({"error": "Product not found in cart"}), 400
+
+
+    if action == "increase":
+        cart_product.quantity += 1
+    elif action == "decrease":
+        if cart_product.quantity > 1:
+            cart_product.quantity -= 1
+        else:
+            db.session.delete(cart_product)  
+    elif action == "remove":
+        db.session.delete(cart_product)
+
+    db.session.commit()
+
+
+    total_price = sum(item.quantity * Product.query.get(item.product_id).price for item in cart.cart_products)
+
+    return jsonify({
+        "quantity": cart_product.quantity if action != "remove" else 0,
+        "total_price": total_price
+    })
+
 
 
 @login_meneger.user_loader

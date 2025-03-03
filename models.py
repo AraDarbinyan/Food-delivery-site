@@ -14,6 +14,7 @@ class Customer(db.Model, UserMixin):
     email = db.Column(db.String(80), nullable=False)
     phone = db.Column(db.String(80), nullable=False)
     password = db.Column(db.String(80), nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
 
     def __repr__(self):
@@ -43,8 +44,9 @@ class Cart(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     customer_id =  db.Column(db.Integer, db.ForeignKey('Customer.id'), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    ordered = db.Column(db.Boolean, default=False)
 
-    products = db.relationship('Product', secondary='cart_product', backref='carts')
+    cart_products = db.relationship('CartProduct', backref='cart', lazy=True)
 
     def __repr__(self):
         return f"<Cart {self.id} for Customer {self.customer_id}>"
