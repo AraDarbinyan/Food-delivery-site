@@ -8,17 +8,17 @@
         {% set total_price = namespace(value=0) %}  {# Initialize total price #}
         {% for item in cart_products %}
             {% set product = get_product(item.product_id) %}
-            <li>
+            <li id="cart-item-{{ product.id }}">
                 <span><strong>{{ product.name }}</strong> <span id="quantity-{{ product.id }}">(x{{ item.quantity }})</span></span>
                 <!-- <span>Qty: {{ item.quantity }}</span> -->
-                <span>Price: {{ product.price * item.quantity }}</span>
+                <span id="price-{{ product.id }}">Price: {{ product.price * item.quantity }} AMD</span>
             </li>
             <button class="cart-action" data-product-id="{{ product.id }}" data-action="increase">+</button> 
             <button class="cart-action" data-product-id="{{ product.id }}" data-action="decrease">-</button> 
             <button class="cart-action" data-product-id="{{ product.id }}" data-action="remove">remove</button>
             {% set total_price.value = total_price.value + (product.price * item.quantity) %}
         {% endfor %}
-        <p class="total-price"><strong>Total price: {{ total_price.value }} AMD</strong></p>
+        <p class="total-price" id="total-price"><strong>Total price: {{ total_price.value }} AMD</strong></p>
     </ul>
     <button>Order</button>
 </div>

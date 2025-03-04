@@ -89,6 +89,8 @@ def update_cart(product_id, action):
     if not cart_product:
         return jsonify({"error": "Product not found in cart"}), 400
 
+    product = Product.query.get(cart_product.product_id) 
+
 
     if action == "increase":
         cart_product.quantity += 1
@@ -102,14 +104,13 @@ def update_cart(product_id, action):
 
     db.session.commit()
 
-
     total_price = sum(item.quantity * Product.query.get(item.product_id).price for item in cart.cart_products)
 
     return jsonify({
         "quantity": cart_product.quantity if action != "remove" else 0,
-        "total_price": total_price
+        "item_total_price": cart_product.quantity * product.price if action != "remove" else 0,  
+        "total_price": total_price 
     })
-
 
 
 @login_meneger.user_loader
