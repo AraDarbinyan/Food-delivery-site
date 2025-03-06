@@ -10,7 +10,6 @@
             {% set product = get_product(item.product_id) %}
             <li id="cart-item-{{ product.id }}">
                 <span><strong>{{ product.name }}</strong> <span id="quantity-{{ product.id }}">(x{{ item.quantity }})</span></span>
-                <!-- <span>Qty: {{ item.quantity }}</span> -->
                 <span id="price-{{ product.id }}">Price: {{ product.price * item.quantity }} AMD</span>
             </li>
             <button class="cart-action" data-product-id="{{ product.id }}" data-action="increase">+</button> 

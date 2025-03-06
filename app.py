@@ -51,8 +51,7 @@ def cart():
         return redirect(url_for('menu'))
     
     cart_products = CartProduct.query.filter_by(cart_id=cart.id).all()
-    # get_product = Product.query.filter_by(id = cart_products.product_id).all()
-    return render_template('cart.html',  cart_products=cart_products, get_product=get_product)
+    return render_template('cart.htfml',  cart_products=cart_products, get_product=get_product)
 
 
 @app.route('/add_to_cart/<int:product_id>', methods=['POST'])
