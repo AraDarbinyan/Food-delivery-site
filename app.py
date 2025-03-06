@@ -42,6 +42,9 @@ def get_product(product_id):
 @app.route('/cart/')
 @login_required
 def cart():
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
+    
     cart = Cart.query.filter_by(customer_id=current_user.id).first()
     if not cart:
         flash('Your cart is empty.')
