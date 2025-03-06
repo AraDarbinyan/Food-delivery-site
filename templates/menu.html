@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block title %}Menu{% endblock %}
+
 {% block content %}
 <h1 class="Welcome">Assortment</h1>
 
@@ -74,5 +76,8 @@
         <p>Beer</p>
         </a>
     </div>
+</div>
+<div class="cart-image">
+    <a href="{{ url_for('cart') }}"><img src="{{url_for('static', filename='images/shop-cart.png')}}" alt="Shopping cart"></a>
 </div>
 {% endblock %}

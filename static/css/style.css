@@ -134,6 +134,17 @@ h3 {
     flex-grow: 1;
 }
 
+.cart-image{
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+}
+
+.cart-image img{
+  height: 150px;
+  width: 150px;
+}
+
 .productimage {
   width: 300px;
   height: 300px;
