@@ -42,3 +42,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+        button.addEventListener("click", function (event) {
+            event.preventDefault();
+            
+            let productId = this.dataset.productId;
+            
+            fetch(`/add_to_cart/${productId}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    alert(data.message);  
+                } else if (data.error) {
+                    alert(data.error);
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+    });
+});

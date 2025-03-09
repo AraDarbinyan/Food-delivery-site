@@ -51,7 +51,7 @@ def cart():
         return redirect(url_for('menu'))
     
     cart_products = CartProduct.query.filter_by(cart_id=cart.id).all()
-    return render_template('cart.htfml',  cart_products=cart_products, get_product=get_product)
+    return render_template('cart.html',  cart_products=cart_products, get_product=get_product)
 
 
 @app.route('/add_to_cart/<int:product_id>', methods=['POST'])
@@ -74,9 +74,10 @@ def add_to_cart(product_id):
         db.session.commit()
 
         flash(f'{product.name} added to cart successfully!')
-        return redirect(url_for('menu'))
+        
+        return jsonify({"message": f"{product.name} added to cart successfully!"}), 200
     except AttributeError:
-        return redirect(url_for('login'))
+        return jsonify({"error": "You need to log in first"}), 401
     
 
 @app.route('/update_cart/<int:product_id>/<action>', methods=['POST'])

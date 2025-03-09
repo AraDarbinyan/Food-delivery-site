@@ -13,7 +13,7 @@
             <p>{{product.description}}</p>
             <p class="price">{{product.price}} AMD</p>
             <form action="{{ url_for('add_to_cart', product_id = product.id) }}" method="post">
-                <button type="submit" class="add-to-cart">+ Add to cart</button>
+                <button type="submit" class="add-to-cart" data-product-id="{{ product.id }}">+ Add to cart</button>
             </form>
         </div>
     </div>
