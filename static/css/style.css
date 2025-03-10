@@ -1,14 +1,9 @@
+/* general and base.html css */
 html, body {
   height: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
-}
-.BackImage {
-    width: 100%;
-}
-.Welcome {
-    text-align: center;
 }
 .main-content {
   flex: 1; 
@@ -48,6 +43,15 @@ h3 {
     padding-bottom: 5px;
 }
 
+/* index.html css */
+.BackImage {
+  width: 100%;
+}
+.Welcome {
+  text-align: center;
+}
+
+/* about css */
 .aboutinfo {
     /* text-align: center; */
     display: block;
@@ -91,11 +95,8 @@ h3 {
     height: 50px;
   }
 
-  .container { 
-    width: 300px; 
-    margin: auto; 
- }
 
+ /* menu.html */
  .category-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -134,23 +135,14 @@ h3 {
     flex-grow: 1;
 }
 
-.cart-image{
-  position: absolute;
-  bottom: 8px;
-  right: 12px;
-}
-
-.cart-image img{
-  height: 150px;
-  width: 150px;
-}
-
+/* category.html css */
 .productimage {
   width: 300px;
   height: 300px;
 }
-.main-content {
-  flex: 1;
+.container { 
+  width: 300px; 
+  margin: auto; 
 }
 
 /* Footer styling */
@@ -218,6 +210,7 @@ button.add-to-cart:active {
   transform: scale(0.97);
 }
 
+/* cart.html css */
 .cart {
   max-width: 600px;
   margin: 40px auto;
@@ -227,7 +220,17 @@ button.add-to-cart:active {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Cart Items */
+.cart-image{
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+}
+
+.cart-image img{
+  height: 150px;
+  width: 150px;
+}
+
 #cart-items {
   list-style-type: none;
   padding: 0;
@@ -278,4 +281,43 @@ a:hover {
   font-weight: bold;
   text-align: right;
   margin-top: 15px;
+}
+
+/* order.html css */
+
+.order-form{
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.payment-methods {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+}
+
+.payment-methods label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
 }

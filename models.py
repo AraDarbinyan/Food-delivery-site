@@ -69,12 +69,12 @@ class Order(db.Model):
     __tablename__ = 'Order'
 
     id = db.Column(db.Integer, primary_key=True)
-    customer_id =  db.Column(db.Integer, db.ForeignKey('Customer.id'), nullable=False)
+    cart_id =  db.Column(db.Integer, db.ForeignKey('Cart.id'), nullable=False)
     total_price = db.Column(db.Numeric(8,2), nullable=False)
     delivery_address = db.Column(db.Text, nullable=False)
-    status = db.Column(db.Enum('pending', 'paid', 'shipped', 'delivered', 'canceled', name="order_status"), default="pending")
+    payment_method = db.Column(db.String(50), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
 
     def __repr__(self):
-        return f"<Order {self.id} for Customer {self.customer_id}>"
+        return f"<Order {self.id} of Customer {self.cart_id}>"

@@ -19,7 +19,9 @@
         {% endfor %}
         <p class="total-price" id="total-price"><strong>Total price: {{ total_price.value }} AMD</strong></p>
     </ul>
-    <button>Order</button>
+    <form action="{{ url_for('order') }}">
+        <button>Order</button>
+    </form>
 </div>
 <a href="{{ url_for('menu') }}">Continue Shopping</a>
 </div>

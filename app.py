@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import Product, Customer, Cart, CartProduct, db
+from models import Product, Customer, Cart, CartProduct, Order, db
 
 app = Flask(__name__)
 
@@ -45,7 +45,7 @@ def cart():
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
     
-    cart = Cart.query.filter_by(customer_id=current_user.id).first()
+    cart = Cart.query.filter_by(customer_id=current_user.id, ordered=False).first()
     if not cart:
         flash('Your cart is empty.')
         return redirect(url_for('menu'))
@@ -58,7 +58,7 @@ def cart():
 def add_to_cart(product_id):
     try:
         product = Product.query.get_or_404(product_id)
-        cart = Cart.query.filter_by(customer_id=current_user.id).first()
+        cart = Cart.query.filter_by(customer_id=current_user.id, ordered=False).first()
         if not cart:
             cart = Cart(customer_id=current_user.id)
             db.session.add(cart)
@@ -83,7 +83,7 @@ def add_to_cart(product_id):
 @app.route('/update_cart/<int:product_id>/<action>', methods=['POST'])
 @login_required
 def update_cart(product_id, action):
-    cart = Cart.query.filter_by(customer_id=current_user.id).first()
+    cart = Cart.query.filter_by(customer_id=current_user.id, ordered=False).first()
     if not cart:
         return jsonify({"error": "Cart not found"}), 400
 
@@ -114,6 +114,41 @@ def update_cart(product_id, action):
         "item_total_price": cart_product.quantity * product.price if action != "remove" else 0,  
         "total_price": total_price 
     })
+
+
+@app.route('/order/', methods=['GET', 'POST'])
+@login_required
+def order():
+
+    if request.method == 'POST':
+        address = request.form.get('address')
+        payment_method = request.form.get('payment_method')
+
+        cart = Cart.query.filter_by(customer_id=current_user.id, ordered=False).first()
+        cart_products = CartProduct.query.filter_by(cart_id=cart.id)
+
+        if not cart or not cart_products:
+            flash("Your cart is empty") 
+            return redirect(url_for('menu'))
+        
+        total_price = sum(item.quantity * Product.query.get(item.product_id).price for item in cart.cart_products)
+
+        new_order = Order(
+            cart_id=cart.id,
+            total_price=total_price,
+            payment_method=payment_method,
+            delivery_address=address
+        )
+        db.session.add(new_order)
+        db.session.commit()
+
+        cart.ordered = True
+        db.session.commit()
+
+        flash("Ordered successfuly")
+        return redirect(url_for('menu'))
+
+    return render_template('order.html')
 
 
 @login_meneger.user_loader
