@@ -207,7 +207,31 @@ def logout():
 @login_required
 def profile():
     if current_user.is_authenticated:
-        return render_template('profile.html', name=current_user.name, id=current_user.id)
+        customer = Customer.query.filter_by(id=current_user.id).first()
+        past_carts = Cart.query.filter_by(customer_id=current_user.id).all()
+
+        if not past_carts:
+            flash("You have no past orders.", "info")
+        orders = []
+
+        for cart in past_carts:
+            cart_products = CartProduct.query.filter_by(cart_id=cart.id).all()
+
+            products = [{
+                "name": Product.query.get(item.product_id).name,
+                "quantity": item.quantity,
+                "price": Product.query.get(item.product_id).price * item.quantity
+            } for item in cart_products]
+
+            order_details = {
+                "id": cart.id,
+                "created_at": cart.created_at.strftime('%Y-%m-%d %H:%M'),
+                "total_price": sum(item["price"] for item in products),
+                "products": products
+            }
+
+            orders.append(order_details)
+        return render_template('profile.html', customer=customer, orders=orders)
     else:
         return redirect(url_for('login'))
 

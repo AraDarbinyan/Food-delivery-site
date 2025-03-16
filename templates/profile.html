@@ -3,8 +3,41 @@
 {% block title %}Profile{% endblock %}
 
 {% block content %}
-<h1>Welcome to your account</h1>
-ID: {{id}} <br></br>
-Name: {{name}} <br></br>
-<a href="{{ url_for('logout') }}">Logout</a>
+<div class="profile-container">
+    <h1>Welcome to your account {{customer.name}}</h1>
+    <div class="profile-info">
+        <h2>Profile Info</h2><br><br>
+        ID: {{customer.id}} <br></br>
+        Name: {{customer.name}} <br></br>
+        Email: {{customer.email}} <br></br>
+        Phone: {{customer.phone}} <br></br>
+        Account was created at {{customer.created_at.strftime('%Y-%m-%d %H:%M')}} <br></br>
+    </div>
+    <div class="order-history">
+        <h2>Order History</h2>
+        {% if orders %}
+            {% for order in orders %}
+                <div class="order-container">
+                    <h4>Order #{{ order.id }} - {{ order.created_at }}</h4>
+                    <p><b>Total Price:</b> {{ order.total_price }} AMD</p>
+
+                    <h4>Ordered Products:</h4>
+                    <ul>
+                        {% for product in order.products %}
+                            <li>
+                                <b>{{ product.name }}</b> (x{{ product.quantity }}) - {{ product.price }} AMD
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <hr>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>You have no orders yet.</p>
+        {% endif %}
+    </div>
+    
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+</div>
 {% endblock %}
