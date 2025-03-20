@@ -4,14 +4,14 @@
 
 {% block content %}
 <div class="container">
-    <!-- {% for msg in get_flashed_messages() %}
-    <div>{{msg}}</div>
-    {% endfor %} -->
+
     {% with messages = get_flashed_messages() %}
     {% if messages %}
         <ul>
         {% for message in messages %}
-            <li>{{ message }}</li>
+            {% if any(word in message for word in ["Login", "Account", "Password"]) %}
+                <li>{{ message }}</li>
+            {% endif %}
         {% endfor %}
         </ul>
     {% endif %}

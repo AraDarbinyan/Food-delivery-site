@@ -163,6 +163,7 @@ footer {
   color: white;
   border: none;
   border-radius: 8px;
+  margin: 15px;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
@@ -208,6 +209,19 @@ button.add-to-cart:hover {
 button.add-to-cart:active {
   background-color: #b33636; /* Even darker on click */
   transform: scale(0.97);
+}
+
+form .cart-success-message {
+  color: green;
+  font-size: 20px;
+  margin-top: 5px;
+  text-align: center;
+  font-weight: bold;
+  transition: opacity 0.5s ease-in-out;
+}
+
+form .cart-success-message.show {
+  opacity: 1;
 }
 
 /* cart.html css */
@@ -268,6 +282,7 @@ a {
   display: block;
   text-align: center;
   margin-top: 15px;
+  margin-bottom: 15px;
   font-size: 16px;
   color: #007bff;
   text-decoration: none;

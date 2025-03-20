@@ -58,10 +58,30 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(response => response.json())
             .then(data => {
-                if (data.message) {
-                    alert(data.message);  
-                } else if (data.error) {
-                    alert(data.error);
+                if ("error" in data) {
+                    alert(data.error); 
+                } else {
+                    let existingMessage = document.querySelector(`#message-${productId}`);
+                    if (existingMessage) existingMessage.remove();
+
+                    // Create a success message
+                    let message = document.createElement("p");
+                    message.id = `message-${productId}`;
+                    message.textContent = "Added to cart!";
+                    message.classList.add("cart-success-message");
+
+                    // Append message below the button
+                    this.parentElement.appendChild(message);
+
+                    // Force reflow to ensure CSS is applied
+                    setTimeout(() => {
+                        message.classList.add("show"); // Add a class for transition effect
+                    }, 10);
+
+                    // Remove message after 3 seconds
+                    setTimeout(() => {
+                        message.remove();
+                    }, 3000);
                 }
             })
             .catch(error => console.error("Error:", error));

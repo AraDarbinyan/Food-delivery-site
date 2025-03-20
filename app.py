@@ -100,8 +100,6 @@ def update_cart(product_id, action):
     elif action == "decrease":
         if cart_product.quantity > 1:
             cart_product.quantity -= 1
-        else:
-            db.session.delete(cart_product)  
     elif action == "remove":
         db.session.delete(cart_product)
 
@@ -208,7 +206,7 @@ def logout():
 def profile():
     if current_user.is_authenticated:
         customer = Customer.query.filter_by(id=current_user.id).first()
-        past_carts = Cart.query.filter_by(customer_id=current_user.id).all()
+        past_carts = Cart.query.filter_by(customer_id=current_user.id, ordered=True).all()
 
         if not past_carts:
             flash("You have no past orders.", "info")
