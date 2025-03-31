@@ -111,3 +111,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+setTimeout(function() {
+    let flashMessages = document.querySelectorAll(".flashes li");
+    flashMessages.forEach(msg => msg.style.display = "none");
+}, 3000); 

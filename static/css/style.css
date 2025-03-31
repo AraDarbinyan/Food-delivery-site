@@ -42,6 +42,15 @@ h3 {
     border-bottom: 2px solid #5bc0de;
     padding-bottom: 5px;
 }
+.flashes {
+  list-style-type: none;
+  padding: 10px;
+}
+.flashes-messages {
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+}
 
 /* index.html css */
 .BackImage {

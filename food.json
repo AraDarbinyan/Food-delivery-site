@@ -175,11 +175,11 @@
         "image_path": "Burgers/double-whopper.webp"
     },
     {
-        "name": "Becon burger",
+        "name": "Bacon burger",
         "category": "burger",
         "description": "A juicy beef patty with crispy bacon, cheese, lettuce, and sauce in a toasted bun",
         "price": 2800,
-        "image_path": "Burgers/becon-burger.jpg"
+        "image_path": "Burgers/bacon-burger.jpg"
     },
     {
         "name": "Cheeseburger",
@@ -427,11 +427,11 @@
         "image_path": "Sushi/alyaska.webp"
     },
     {
-        "name": "Filadelfia",
+        "name": "Philadelphia",
         "category": "sushi",
         "description": "8 items. Rice, nori, salmon, cream cheese, cucumber",
         "price": 3700,
-        "image_path": "Sushi/filadelfia.webp"
+        "image_path": "Sushi/philadelphia.webp"
     },
     {
         "name": "Fokioni",

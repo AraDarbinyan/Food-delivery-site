@@ -40,7 +40,6 @@ def get_product(product_id):
 
 
 @app.route('/cart/')
-@login_required
 def cart():
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
@@ -73,7 +72,6 @@ def add_to_cart(product_id):
             
         db.session.commit()
 
-        flash(f'{product.name} added to cart successfully!')
         
         return jsonify({"message": f"{product.name} added to cart successfully!"}), 200
     except AttributeError:
@@ -123,9 +121,10 @@ def order():
         payment_method = request.form.get('payment_method')
 
         cart = Cart.query.filter_by(customer_id=current_user.id, ordered=False).first()
-        cart_products = CartProduct.query.filter_by(cart_id=cart.id)
+        if cart:
+            cart_products = CartProduct.query.filter_by(cart_id=cart.id)
 
-        if not cart or not cart_products:
+        if  cart_products.count() == 0:
             flash("Your cart is empty") 
             return redirect(url_for('menu'))
         

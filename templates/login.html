@@ -5,17 +5,6 @@
 {% block content %}
 <div class="container">
 
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-        <ul>
-        {% for message in messages %}
-            {% if any(word in message for word in ["Login", "Account", "Password"]) %}
-                <li>{{ message }}</li>
-            {% endif %}
-        {% endfor %}
-        </ul>
-    {% endif %}
-    {% endwith %}
     <h2>Login</h2>
     
     <form action="{{ url_for('login') }}" method="post">
