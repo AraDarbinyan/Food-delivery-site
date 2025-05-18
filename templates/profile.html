@@ -17,24 +17,24 @@
     <div class="order-history">
         <h2>Order History</h2>
         {% if orders %}
-            {% for order in orders %}
-                <div class="order-container">
-                    <h4>Order #{{ order.id }} - {{ order.created_at }}</h4>
-                    <p><b>Total Price:</b> {{ order.total_price }} AMD</p>
+        {% for order in orders %}
+        <div class="order-container">
+            <h4>Order #{{ order.id }} - {{ order.created_at }}</h4>
+            <p><b>Total Price:</b> {{ order.total_price }} AMD</p>
 
-                    <h4>Ordered Products:</h4>
-                    <ul>
-                        {% for product in order.products %}
-                            <li>
-                                <b>{{ product.name }}</b> (x{{ product.quantity }}) - {{ product.price }} AMD
-                            </li>
-                        {% endfor %}
-                    </ul>
-                    <hr>
-                </div>
-            {% endfor %}
+            <h4>Ordered Products:</h4>
+            <ul>
+                {% for product in order.products %}
+                <li>
+                    <b>{{ product.name }}</b> (x{{ product.quantity }}) - {{ product.price }} AMD
+                </li>
+                {% endfor %}
+            </ul>
+            <hr>
+        </div>
+        {% endfor %}
         {% else %}
-            <p>You have no orders yet.</p>
+        <p>You have no orders yet.</p>
         {% endif %}
     </div>
 

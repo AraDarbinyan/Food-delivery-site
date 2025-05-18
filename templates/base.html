@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 </head>
+
 <body>
-    {% block welcome %}
-    {% endblock %}
-    <div class="main-content">
+    <header>
         <nav class="menu">
             <ul>
                 <li><a href="/">Home</a></li>
@@ -18,24 +18,29 @@
                 <li><a href="/login/">Profile</a></li>
             </ul>
         </nav>
+    </header>
+    {% block welcome %}
+    {% endblock %}
+    <main class="main-content">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
-            <ul class="flashes">
+        <ul class="flashes">
             {% for message in messages %}
 
-                    <li class="flashes-messages">{{ message }}</li>
+            <li class="flashes-messages">{{ message }}</li>
 
             {% endfor %}
-            </ul>
+        </ul>
         {% endif %}
         {% endwith %}
 
         {% block content %}
         {% endblock %}
-    </div>
+    </main>
     <footer>
         <p>&copy; 2025 Food Delivery Service</p>
     </footer>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
+
 </html>

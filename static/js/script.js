@@ -8,37 +8,37 @@ document.addEventListener("DOMContentLoaded", function () {
                 method: "POST",
                 headers: { "X-Requested-With": "XMLHttpRequest" }
             })
-            .then(response => response.json())
-            .then(data => {
-                if ("error" in data) {
-                    alert(data.error);
-                } else if (action === "remove") {
-                    document.querySelector(`#cart-item-${productId}`).remove();
-                    document.querySelector(`button[data-product-id="${productId}"][data-action="increase"]`).remove();
-                    document.querySelector(`button[data-product-id="${productId}"][data-action="decrease"]`).remove();
-                    document.querySelector(`button[data-product-id="${productId}"][data-action="remove"]`).remove();
-                    document.querySelector("#total-price").textContent = `Total price: ${data.total_price} AMD`;
-                } else {
-                    let quantityElement = document.querySelector(`#quantity-${productId}`);
-                    let priceElement = document.querySelector(`#price-${productId}`);
-                    let totalPriceElement = document.querySelector("#total-price");
+                .then(response => response.json())
+                .then(data => {
+                    if ("error" in data) {
+                        alert(data.error);
+                    } else if (action === "remove") {
+                        document.querySelector(`#cart-item-${productId}`).remove();
+                        document.querySelector(`button[data-product-id="${productId}"][data-action="increase"]`).remove();
+                        document.querySelector(`button[data-product-id="${productId}"][data-action="decrease"]`).remove();
+                        document.querySelector(`button[data-product-id="${productId}"][data-action="remove"]`).remove();
+                        document.querySelector("#total-price").textContent = `Total price: ${data.total_price} AMD`;
+                    } else {
+                        let quantityElement = document.querySelector(`#quantity-${productId}`);
+                        let priceElement = document.querySelector(`#price-${productId}`);
+                        let totalPriceElement = document.querySelector("#total-price");
 
-                    if (data.quantity === 0) {
-                        let itemRow = document.querySelector(`#cart-item-${productId}`);
-                        if (itemRow) {
-                            itemRow.remove();
+                        if (data.quantity === 0) {
+                            let itemRow = document.querySelector(`#cart-item-${productId}`);
+                            if (itemRow) {
+                                itemRow.remove();
+                            }
                         }
-                    }
-                     else {
+                        else {
 
-                        quantityElement.textContent = `(x${data.quantity})`;
-                        priceElement.textContent = `Price: ${data.item_total_price} AMD`;
-                    }
+                            quantityElement.textContent = `(x${data.quantity})`;
+                            priceElement.textContent = `Price: ${data.item_total_price} AMD`;
+                        }
 
-                    totalPriceElement.textContent = `Total price: ${data.total_price} AMD`;
-                }
-            })
-            .catch(error => console.error("Error:", error));
+                        totalPriceElement.textContent = `Total price: ${data.total_price} AMD`;
+                    }
+                })
+                .catch(error => console.error("Error:", error));
         });
     });
 });
@@ -47,50 +47,50 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".add-to-cart").forEach(button => {
         button.addEventListener("click", function (event) {
             event.preventDefault();
-            
+
             let productId = this.dataset.productId;
-            
+
             fetch(`/add_to_cart/${productId}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 }
             })
-            .then(response => response.json())
-            .then(data => {
-                if ("error" in data) {
-                    alert(data.error); 
-                } else {
-                    let existingMessage = document.querySelector(`#message-${productId}`);
-                    if (existingMessage) existingMessage.remove();
+                .then(response => response.json())
+                .then(data => {
+                    if ("error" in data) {
+                        alert(data.error);
+                    } else {
+                        let existingMessage = document.querySelector(`#message-${productId}`);
+                        if (existingMessage) existingMessage.remove();
 
-                    // Create a success message
-                    let message = document.createElement("p");
-                    message.id = `message-${productId}`;
-                    message.textContent = "Added to cart!";
-                    message.classList.add("cart-success-message");
+                        // Create a success message
+                        let message = document.createElement("p");
+                        message.id = `message-${productId}`;
+                        message.textContent = "Added to cart!";
+                        message.classList.add("cart-success-message");
 
-                    // Append message below the button
-                    this.parentElement.appendChild(message);
+                        // Append message below the button
+                        this.parentElement.appendChild(message);
 
-                    // Force reflow to ensure CSS is applied
-                    setTimeout(() => {
-                        message.classList.add("show"); // Add a class for transition effect
-                    }, 10);
+                        // Force reflow to ensure CSS is applied
+                        setTimeout(() => {
+                            message.classList.add("show"); // Add a class for transition effect
+                        }, 10);
 
-                    // Remove message after 3 seconds
-                    setTimeout(() => {
-                        message.remove();
-                    }, 3000);
-                }
-            })
-            .catch(error => console.error("Error:", error));
+                        // Remove message after 3 seconds
+                        setTimeout(() => {
+                            message.remove();
+                        }, 3000);
+                    }
+                })
+                .catch(error => console.error("Error:", error));
         });
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("registerForm").addEventListener("submit", function(event) {
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("registerForm").addEventListener("submit", function (event) {
         let email = document.getElementById("email").value;
         let phone = document.getElementById("phone").value;
 
@@ -103,16 +103,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         else if (!emailPattern.test(email)) {
             alert("Invalid email format");
-            event.preventDefault(); 
+            event.preventDefault();
         }
         else if (!phonePattern.test(phone)) {
             alert("Invalid phone number");
-            event.preventDefault(); 
+            event.preventDefault();
         }
     });
 });
 
-setTimeout(function() {
+setTimeout(function () {
     let flashMessages = document.querySelectorAll(".flashes li");
     flashMessages.forEach(msg => msg.style.display = "none");
 }, 3000); 
