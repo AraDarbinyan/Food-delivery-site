@@ -2,6 +2,8 @@
 
 {% block title %}Order{% endblock %}
 
+{% block extra_css %}<link rel="stylesheet" href="{{url_for('static', filename='css/order.css')}}">{% endblock %}
+
 {% block content %}
 
 <div class="order-form">

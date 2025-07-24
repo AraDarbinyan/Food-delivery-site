@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block title %}Category{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{{url_for('static', filename='css/menu.css')}}">{% endblock %}
+
 
 {% block content %}
 <a href="{{ url_for('cart') }}"><img src="{{url_for('static', filename='images/shop-cart.png')}}" alt="Shopping cart"></a>

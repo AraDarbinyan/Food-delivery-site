@@ -2,9 +2,7 @@
 
 {% block title %}Home{% endblock %}
 
-
-{% block welcome %}
-{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">{% endblock %}
 
 {% block content %}
 <div class="home-bg">
