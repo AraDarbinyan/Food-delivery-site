@@ -1,0 +1,10 @@
+__pycache__/
+.venv/
+venv/
+*.pyc
+.git/
+.gitignore
+*.db
+*.sqlite3
+instance/
+fooddeliver.db
