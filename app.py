@@ -2,22 +2,17 @@ from flask import Flask, render_template, request, redirect, url_for, flash, jso
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import Product, Customer, Cart, CartProduct, Order, db
-from dotenv import load_dotenv
-import os
-
-
-load_dotenv()
+from config import Config
 
 
 app = Flask(__name__)
+app.config.from_object(Config)
 
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 login_meneger = LoginManager()
 login_meneger.init_app(app)
 login_meneger.login_message = 'view'
+
 
 @app.route("/")
 def index():
@@ -188,6 +183,11 @@ def register():
         flash("Password does not match")
         return redirect(url_for('login'))
     
+
+    user = Customer.query.filter_by(email=email).first()
+    if user:
+        flash("User with this email already exists")
+        return redirect(url_for('login'))
 
     hashed_password = generate_password_hash(password)
     new_user = Customer(name=name, email=email, phone=phone, password=hashed_password)
